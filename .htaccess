@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteRule ^(\w{3,25})(\/|)$ index.php?app=$1 [QSA]
+RewriteRule ^ajax/(\w{3,25})(\/|)$ index.php?app=ajax&action=$1 [QSA]
+RewriteRule ^assets/(.+)/(.+)(\/|)$ templates/assets/$1/$2 [QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+ErrorDocument 404 /index.php?app=err404
