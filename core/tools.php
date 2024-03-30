@@ -100,8 +100,8 @@ function a_is_logged_in()
 
 function a_get_logged_in_store()
 {
-	if ( isset( $_SESSION['session_id'] ) && not_empty( $_SESSION['session_id'] ) ) {
-		$store = a_get_store_by_session_id( $_SESSION['session_id'] );
+	if ( isset( $_GET['session_id'] ) && not_empty( $_GET['session_id'] ) ) {
+		$store = a_get_store_by_session_id( $_GET['session_id'] );
 
 		if ( not_empty( $store ) ) {
 			return $store;
@@ -127,7 +127,10 @@ function a_verify_hmac()
 	$shared_secret = APP_CLIENT_SECRET;
 	$params        = $_GET;
 	$hmac          = $_GET['hmac'];
-	$params        = array_diff_key( $params, array( 'hmac' => '' ) );
+
+	unset( $params['app'] );
+
+	$params = array_diff_key( $params, array( 'hmac' => '' ) );
 
 	ksort( $params );
 

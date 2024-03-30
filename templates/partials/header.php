@@ -28,12 +28,5 @@
     <p>
         <a href="<?= a_link( '/dashboard' ) ?>"
            class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Dashboard</a>
-        <a href="<?= a_link( '/orders' ) ?>"
-           class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Orders</a>
-        <a href="<?= a_link( '/logout' ) ?>"
-           class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Logout</a>
     </p>
-    <br/>
-    <p>Last Ran: <?= $g['last_ran'] ?></p>
-    <p>Is Running: <?= ( $g['is_running'] ? "Yes" : "No" ) ?></p>
 </div>

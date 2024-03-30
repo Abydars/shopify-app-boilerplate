@@ -18,7 +18,7 @@ if ( $shop && $code && a_verify_hmac() ) {
 		$session_id = a_generate_session_id();
 		a_create_update_store_token( $shop, $token, $session_id );
 		$_SESSION['session_id'] = $session_id;
-		do_redirect( a_link( '/dashboard' ) );
+		do_redirect( a_link( "/dashboard?session_id={$session_id}" ) );
 	}
 
 	do_redirect( a_link( '/auth' ) . '?error=' . urlencode( $error ) );
